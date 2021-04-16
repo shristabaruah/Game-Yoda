@@ -67,9 +67,9 @@ var score = 0;
 var flag = false;
 
 function play() {
- var playerName = readlineSync.question(chalk.yellow('Enter your name to get started: '))
+ var playerName = readlineSync.question(chalk.magentaBright('Enter your name to get started: '))
 
-  var greetMsg = chalk.green("Hello " + playerName + ", Let's play the quiz.")
+  var greetMsg = chalk.cyanBright("Hello " + playerName + ", Let's play the quiz.")
 
   var instructions = "\nYou will get 2 points for every correct answer and 1 point will be deducted for each wrong answer\n\n"
 
@@ -86,7 +86,7 @@ function play() {
     return;
   }
   if (checkHighScore()) {
-    console.log(chalk.bgGreen("You've scored a High Score"));
+    console.log(chalk.bgBlue("You've scored a High Score"));
   }
   console.log("Your Score is " + score + "/20");
   console.log("Thank you for playing!!");
@@ -96,7 +96,7 @@ function quizQuestion(q) {
   console.log("\n\n" + q.question);
   var a = readlineSync.keyInSelect(q.options, "Choose from ");
   if (a === q.ans) {
-    console.log(chalk.green("Your answer is correct"));
+    console.log(chalk.greenBright("Your answer is correct"));
     score = score + 2;
   } else {
     console.log(chalk.red.bold("Oops! Thats a wrong answer."));
